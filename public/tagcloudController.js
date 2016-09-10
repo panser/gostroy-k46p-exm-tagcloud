@@ -27,8 +27,14 @@ module.controller('TagcloudController', function($scope) {
 
         // Transform all buckets into tag objects
         $scope.tags = buckets.map(function(bucket) {
+            // Use the getValue function of the aggregation to get the value of a bucket
+            var value = metricsAgg.getValue(bucket);
+            // Finding the minimum and maximum value of all buckets
+            min = Math.min(min, value);
+            max = Math.max(max, value);
             return {
-                label: bucket.key
+                label: bucket.key,
+                value: value
             };
         });
 
@@ -37,7 +43,7 @@ module.controller('TagcloudController', function($scope) {
             tag.fontSize = (tag.value - min) / (max - min) * (maxFontSize - minFontSize) + minFontSize;
             return tag;
         });
-        
+
     });
     
 });
