@@ -39,3 +39,4 @@ function TagcloudProvider(Private) {
 // Register the above provider to the visualization registry
 require('ui/registry/vis_types').register(TagcloudProvider);
 
+require('plugins/gostroy-k-46-p-exm-tagcloud/tagcloudController')
