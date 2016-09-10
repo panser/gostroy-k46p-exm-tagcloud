@@ -1,5 +1,5 @@
 // Include our custom CSS (LESS also works)
-require('plugins/gostroy_k_46_p_exm_timroes/tagcloud.css');
+require('plugins/gostroy_k_46_p_exm_tagcloud/tagcloud.css');
 
 // The provider function must return the visualization
 function TagcloudProvider(Private) {
@@ -17,5 +17,5 @@ function TagcloudProvider(Private) {
 }
 
 // Register the above provider to the visualization registry
-require('ui/registry/vis_types').register(ClockProvider);
+require('ui/registry/vis_types').register(TagcloudProvider);
 
