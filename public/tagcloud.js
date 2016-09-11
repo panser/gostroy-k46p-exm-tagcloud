@@ -1,6 +1,6 @@
 // Include our custom CSS (LESS also works)
 require('plugins/gostroy-k-46-p-exm-tagcloud/tagcloudController');
-require('plugins/gostroy_k_46_p_exm_tagcloud/tagcloud.css');
+require('plugins/gostroy-k-46-p-exm-tagcloud/tagcloud.css');
 
 // The provider function must return the visualization
 function TagcloudProvider(Private) {
@@ -15,7 +15,7 @@ function TagcloudProvider(Private) {
     title: 'Tagcloud', // the name shown in the visualize list
     icon: 'fa-cloud', // the class of the font awesome icon for this
     description: 'Tagcloud visualization', // description shown to the user
-    template: require('plugins/gostroy_k_46_p_exm_tagcloud/tagcloud.html'), // Load the template of the visualization
+    template: require('plugins/gostroy-k-46-p-exm-tagcloud/tagcloud.html'), // Load the template of the visualization
     schemas: new Schemas([
       {
         group: 'metrics',

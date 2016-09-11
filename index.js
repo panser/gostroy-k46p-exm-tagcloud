@@ -6,7 +6,7 @@ module.exports = function(kibana) {
     // We have some ui components, that we need to describe
     uiExports: {
       // Register our visualizations (a plugin can have multiple visualizations)
-      visTypes: [ 'plugins/gostroy_k_46_p_exm_tagcloud/tagcloud' ]
+      visTypes: [ 'plugins/gostroy-k-46-p-exm-tagcloud/tagcloud' ]
     }
 
   });
