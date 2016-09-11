@@ -15,10 +15,17 @@ module.controller('TagcloudController', function($scope, Private) {
             return;
         }
 
+        var selectedBuckets = $scope.vis.aggs.bySchemaName['tags'];
+        var selectedMetrics = $scope.vis.aggs.bySchemaName['tagsize'];
+        if(!selectedBuckets || !selectedMetrics){
+          $scope.tags = null;
+          return;
+        }
+
         // Retrieve the id of the configured tags aggregation
-        var tagsAggId = $scope.vis.aggs.bySchemaName['tags'][0].id;
+        var tagsAggId = selectedBuckets[0].id;
         // Retrieve the metrics aggregation configured
-        var metricsAgg = $scope.vis.aggs.bySchemaName['tagsize'][0];
+        var metricsAgg = selectedMetrics[0];
         console.log(metricsAgg);
 
         // Get the buckets of that aggregation
@@ -61,5 +68,5 @@ module.controller('TagcloudController', function($scope, Private) {
             $scope.vis.indexPattern.title
         );
     };
-    
+
 });
